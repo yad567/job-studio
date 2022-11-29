@@ -13,7 +13,7 @@
     "server": "nodemon server --ignore client",
     "client": "npm start --prefix client",
     "start": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\"",
-    "build": "react-scripts build",
+    "build": "react-scripts build"
 
   },
   "repository": {
