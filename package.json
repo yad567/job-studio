@@ -1,20 +1,16 @@
 {
   "name": "job.studio",
-  "homepage":"http://yad567.github.io/job-studio",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "install-server": "npm install",
-    "install-dependencies": " npm run install-client && npm run install-server ",
-    "predeploy":"npm run build",
-    "deploy": "gh-pages -d build",
-    "server": "nodemon server --ignore client",
-    "client": "npm start --prefix client",
-    "start": "concurrently --kill-others-on-fail \" npm run server\" \" npm run client\"",
-    "build": "react-scripts build"
-
+    "build-client": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild":"npm run intall",
+    "server": "nodemon server.js --ignore client",
+    "client": "cd client && npm run start",
+    "start": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
@@ -23,12 +19,8 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/yad567/job.studio/issues"
-  },
   "devDependencies": {
     "concurrently": "^7.3.0",
-    "gh-pages": "^4.0.0",
     "nodemon": "^2.0.19"
   },
   "dependencies": {
